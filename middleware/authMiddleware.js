@@ -3,7 +3,7 @@ const User = require('../models/userModel')
 
 const isAuthenticated = async(req, res,next)=>{
     try {
-        const token = req.cookies.token
+        const token = req.cookies.token1
         if(!token){
             return res.status(401).json({msg:'No token, authorization denied'})
         }
