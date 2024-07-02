@@ -12,7 +12,7 @@ const corsOption = {
     origin: function (origin, callback) {
         if (!origin) return callback(null, true); // Allow non-browser requests
     // /^https:\/\/([a-zA-Z0-9-]+\.)?mykitab\.live(:[0-9]+)?$/ ||
-        const allowedDomain = /^https:\/\/([a-zA-Z0-9-]+\.)?localhost:5000(:[0-9]+)?$/
+        const allowedDomain =  /^http?:\/\/([a-zA-Z0-9-]+\.)?localhost(:[0-9]+)?$/
        
 ;
         if (allowedDomain.test(origin)) {
