@@ -7,6 +7,7 @@ const connectDB = require('./util/db')
 const cookieParser = require('cookie-parser')
 const cloudinary = require('cloudinary').v2
 const port  = 5000;
+
 const corsOption = {
  
 //     origin: function (origin, callback) {
@@ -31,9 +32,9 @@ const corsOption = {
 
 }
 
- app.use(cors(corsOption))
+//  app.use(cors(corsOption))
 // app.use(express.urlencoded({ extended: true }))
-
+app.use(express.static('dist'))
 cloudinary.config({
     cloud_name:process.env.CLOUDINARY_CLOUD_NAME ,                        
     api_key:process.env.CLOUDINARY_API_KEY,
