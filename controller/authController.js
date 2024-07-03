@@ -13,7 +13,8 @@ const login = async (req ,res)=>{
     const token  = await user.generateJWT()
     res.cookie('token' , token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
-        httpOnly: true,
+        // httpOnly: true,
+        // sameSite: 'None'
         // secure: true,
     })
     res.status(200).json({
@@ -50,7 +51,7 @@ const register = async(req ,res)=>{
  const token = await user.generateJWT()
     res.cookie('token', token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
-        httpOnly: true,
+        // httpOnly: true,
         // secure: true,
        
     })
@@ -98,7 +99,7 @@ const sendOtp = async(req,res)=>{
     const token = await user.generateJWT()
     res.cookie('token', token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
-        httpOnly: true,
+        // httpOnly: true,
         // secure: true,
        
     })
