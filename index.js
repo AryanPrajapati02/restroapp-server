@@ -10,19 +10,19 @@ const port  = 5000;
 
 const corsOption = {
  
-//     origin: function (origin, callback) {
-//         if (!origin) return callback(null, true); // Allow non-browser requests
-//     // /^https:\/\/([a-zA-Z0-9-]+\.)?mykitab\.live(:[0-9]+)?$/ ||
-//         const allowedDomain =  /^http?:\/\/([a-zA-Z0-9-]+\.)?localhost(:[0-9]+)?$/
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true); // Allow non-browser requests
+    //|| /^http?:\/\/([a-zA-Z0-9-]+\.)?localhost(:[0-9]+)?$/
+        const allowedDomain = /^https:\/\/([a-zA-Z0-9-]+\.)?mykitab\.live(:[0-9]+)?$/
        
-// ;
-//         if (allowedDomain.test(origin)) {
-//           callback(null, true);
-//         } else {
-//           callback(new Error('Not allowed by CORS'));
-//         }
-//       },
-    origin:'http://localhost:5173',
+;
+        if (allowedDomain.test(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
+    // origin:'http://localhost:5173',
     credentials:true,
   
     methods:['GET','POST','PUT','PATCH','DELETE'],

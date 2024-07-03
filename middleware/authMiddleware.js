@@ -7,7 +7,7 @@ const isAuthenticated = async(req, res,next)=>{
     
     const cookieToken = req.cookies.token;
     const token = headerToken || cookieToken;
-    console.log(token)
+    // console.log(token)
         if(!token){
             return res.status(401).json({msg:'No token, authorization denied'})
         }
