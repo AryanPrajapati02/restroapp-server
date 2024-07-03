@@ -17,6 +17,7 @@ const login = async (req ,res)=>{
         // sameSite: 'None'
         // secure: true,
     })
+    res.setHeader('Authorization', `Bearer ${token}`);
     res.status(200).json({
         success: true,
         message:"LoggedIn successfully",
@@ -55,6 +56,7 @@ const register = async(req ,res)=>{
         // secure: true,
        
     })
+    res.setHeader('Authorization', `Bearer ${token}`);
  
  res.status(201).json({
      success: true,
@@ -103,6 +105,7 @@ const sendOtp = async(req,res)=>{
         // secure: true,
        
     })
+    res.setHeader('Authorization', `Bearer ${token}`);
     res.status(201).json({
         message: "OTP sent Successfully",
         success: true,
