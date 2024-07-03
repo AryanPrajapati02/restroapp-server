@@ -23,8 +23,7 @@ const corsOption = {
 //       },
     origin:'http://localhost:5173',
     credentials:true,
-    allowedHeaders:['Content-Type','Authorization'],
-    exposedHeaders:['Content-Type','Authorization'],
+  
     methods:['GET','POST','PUT','PATCH','DELETE'],
     preflightContinue:false,
     optionsSuccessStatus:204,
