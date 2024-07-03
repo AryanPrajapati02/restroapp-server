@@ -14,8 +14,9 @@ const login = async (req ,res)=>{
     res.cookie('token' , token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
         // httpOnly: true,
-        // sameSite: 'None'
+        sameSite: 'None'
         // secure: true,
+       
     })
     res.setHeader('Authorization', `Bearer ${token}`);
     res.status(200).json({
@@ -54,6 +55,8 @@ const register = async(req ,res)=>{
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
         // httpOnly: true,
         // secure: true,
+        sameSite: 'None'
+
        
     })
     res.setHeader('Authorization', `Bearer ${token}`);
@@ -103,6 +106,7 @@ const sendOtp = async(req,res)=>{
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
         // httpOnly: true,
         // secure: true,
+        sameSite: 'None'
        
     })
     res.setHeader('Authorization', `Bearer ${token}`);
