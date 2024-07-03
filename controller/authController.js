@@ -14,7 +14,7 @@ const login = async (req ,res)=>{
     res.cookie('token' , token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
         httpOnly: true,
-        secure: true,
+        // secure: true,
     })
     res.status(200).json({
         success: true,
@@ -51,7 +51,7 @@ const register = async(req ,res)=>{
     res.cookie('token', token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
         httpOnly: true,
-        secure: true,
+        // secure: true,
        
     })
  
@@ -99,7 +99,7 @@ const sendOtp = async(req,res)=>{
     res.cookie('token', token , {
         expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
         httpOnly: true,
-        secure: true,
+        // secure: true,
        
     })
     res.status(201).json({
